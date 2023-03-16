@@ -7,32 +7,27 @@
 
 import UIKit
 
-class ViewController: UIViewController ,UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else { return }
-          print(text)
-    }
-    
+class ViewController: UIViewController  {
+
+
     @IBOutlet weak var upcomingView: UIView!
     
     @IBOutlet weak var tableViewProduct: UITableView!
     var products : [Product] = [Product]()
 
-//    let cellId = "pcell"
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewProduct.delegate = self
         tableViewProduct.dataSource = self
-        let search = UISearchController(searchResultsController: nil)
-        search.searchResultsUpdater = self
-        search.obscuresBackgroundDuringPresentation = false
-        search.searchBar.placeholder = "search"
-        navigationItem.searchController = search
         upcomingView.layer.cornerRadius = 5
+        upcomingView.layer.shadowColor = UIColor.black.cgColor
+        upcomingView.layer.shadowOpacity = 0.1
+        upcomingView.layer.shadowOffset = .zero
+        upcomingView.layer.shadowRadius = 5
         tableViewProduct.layer.cornerRadius = 5
-        // Do any additional setup after loading the view.
-//        tableViewProduct.register(productCell.self, forCellReuseIdentifier: "pcell")
+
     }
     
     
@@ -70,12 +65,6 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource {
         cell.time?.text = currentLastItem.times
         cell.date?.text = currentLastItem.dates
         
-//        cell.productName.text = products[indexPath.row].productName
-//        cell.productimg.image = UIImage(named: products[indexPath.row].productImage)
-//        cell.level.text = products[indexPath.row].levels
-//        cell.time.text = products[indexPath.row].times
-//        cell.date.text = products[indexPath.row].dates
-        
 
         return cell
     }
@@ -84,11 +73,11 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource {
         performSegue(withIdentifier: "showDetails", sender: nil)
     }
     func createProductArray() {
-        products.append(Product(productName: "babka dough", productImage: "babka", levels: "beginner" , times: "1h" , dates: "2h"))
+        products.append(Product(productName: "babka dough", productImage: "babka", levels: "beginner" , times: "1h" , dates: "10 feb - 2:00"))
         
-        products.append(Product(productName: "cinamon", productImage: "cinamon", levels: "" , times: "1h" , dates: "1h"))
-        products.append(Product(productName: "japannes bread", productImage: "jb", levels: "itermidate" , times: "2h" , dates: "3-3"))
-        products.append(Product(productName: "bnanna bread", productImage: "bb", levels: "beginner" , times: "4h" , dates: "5-5-5"))
+        products.append(Product(productName: "cinamon", productImage: "cinamon", levels: "intermidiate" , times: "1h" , dates: "13 feb - 4:00"))
+        products.append(Product(productName: "japannes bread", productImage: "jb", levels: "itermidate" , times: "2h" , dates: "3 feb - 4:00"))
+        products.append(Product(productName: "bnanna bread", productImage: "bb", levels: "Advanced" , times: "4h" , dates: "4 feb - 4:00"))
         
         
     }

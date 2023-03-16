@@ -15,6 +15,7 @@
 		E0BBC30E29C0563400BB8ABB /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BBC30D29C0563400BB8ABB /* Product.swift */; };
 		E0BBC31429C05A2200BB8ABB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BBC31329C05A2200BB8ABB /* ViewController.swift */; };
 		E0BBC31629C05B3F00BB8ABB /* productCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BBC31529C05B3F00BB8ABB /* productCell.swift */; };
+		E0BBC31C29C2F9E800BB8ABB /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BBC31B29C2F9E800BB8ABB /* DesignView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E0BBC30D29C0563400BB8ABB /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		E0BBC31329C05A2200BB8ABB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E0BBC31529C05B3F00BB8ABB /* productCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productCell.swift; sourceTree = "<group>"; };
+		E0BBC31B29C2F9E800BB8ABB /* DesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				E0BBC31329C05A2200BB8ABB /* ViewController.swift */,
 				E0BBC31529C05B3F00BB8ABB /* productCell.swift */,
+				E0BBC31B29C2F9E800BB8ABB /* DesignView.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			files = (
 				E0BBC30E29C0563400BB8ABB /* Product.swift in Sources */,
 				E032BB9429BEFB740080910B /* AppDelegate.swift in Sources */,
+				E0BBC31C29C2F9E800BB8ABB /* DesignView.swift in Sources */,
 				E0BBC31629C05B3F00BB8ABB /* productCell.swift in Sources */,
 				E0BBC31429C05A2200BB8ABB /* ViewController.swift in Sources */,
 				E032BB9629BEFB740080910B /* SceneDelegate.swift in Sources */,

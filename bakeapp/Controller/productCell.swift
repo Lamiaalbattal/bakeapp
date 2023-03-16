@@ -30,7 +30,11 @@ class productCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        level.layer.cornerRadius = 7
+        level.layer.masksToBounds = true
+        
+        productimg.layer.cornerRadius = 4.5
+        
         // Configure the view for the selected state
     }
 }
