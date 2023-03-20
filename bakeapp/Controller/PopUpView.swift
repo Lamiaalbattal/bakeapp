@@ -17,6 +17,10 @@ class PopupView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "Babka dough"
+        //chefName.text = "Ali Boholaiqa"
+        
         contentView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.handleDismiss)))
 
         
@@ -24,6 +28,7 @@ class PopupView: UIViewController {
     
     @objc func handleDismiss() {
         self.dismiss(animated: true)
+        
     }
 
  

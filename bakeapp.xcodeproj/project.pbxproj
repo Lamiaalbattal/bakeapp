@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5665DE6829C8476800A05E25 /* CoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5665DE6729C8476800A05E25 /* CoursesView.swift */; };
 		56874AE129C6FCBA006EABA3 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56874AE029C6FCBA006EABA3 /* PopUpView.swift */; };
 		56C97CD329C7037A009C8228 /* Viewcontroller1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C97CD229C7037A009C8228 /* Viewcontroller1.swift */; };
 		E032BB9429BEFB740080910B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E032BB9329BEFB740080910B /* AppDelegate.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5665DE6729C8476800A05E25 /* CoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesView.swift; sourceTree = "<group>"; };
 		56874AE029C6FCBA006EABA3 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
 		56C97CD229C7037A009C8228 /* Viewcontroller1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Viewcontroller1.swift; sourceTree = "<group>"; };
 		E032BB9029BEFB740080910B /* bakeapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bakeapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +100,7 @@
 			children = (
 				E0BBC31329C05A2200BB8ABB /* ViewController.swift */,
 				56874AE029C6FCBA006EABA3 /* PopUpView.swift */,
+				5665DE6729C8476800A05E25 /* CoursesView.swift */,
 				E0BBC31529C05B3F00BB8ABB /* productCell.swift */,
 				56C97CD229C7037A009C8228 /* Viewcontroller1.swift */,
 				E0BBC31B29C2F9E800BB8ABB /* DesignView.swift */,
@@ -193,6 +196,7 @@
 				56874AE129C6FCBA006EABA3 /* PopUpView.swift in Sources */,
 				E0BBC31429C05A2200BB8ABB /* ViewController.swift in Sources */,
 				E032BB9629BEFB740080910B /* SceneDelegate.swift in Sources */,
+				5665DE6829C8476800A05E25 /* CoursesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
