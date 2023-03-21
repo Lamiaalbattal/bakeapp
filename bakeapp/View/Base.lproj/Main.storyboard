@@ -73,7 +73,7 @@
             <objects>
                 <viewController id="Vb5-ly-kTq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zG6-56-370">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image 6" translatesAutoresizingMaskIntoConstraints="NO" id="SlK-pz-POq">
@@ -264,7 +264,7 @@
                                 <rect key="frame" x="16" y="126" width="361" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qxt-Y2-s96">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="personicone" translatesAutoresizingMaskIntoConstraints="NO" id="qxt-Y2-s96">
                                         <rect key="frame" x="15" y="18" width="43" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="0.72156862749999995" green="0.36078431370000003" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -291,23 +291,16 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <rect key="contentStretch" x="0.0" y="1" width="1" height="1"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Booked Courses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ct-dG-RCK">
-                                <rect key="frame" x="16" y="251" width="151" height="26"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LWa-HZ-Hpw">
                                 <rect key="frame" x="16" y="322" width="361" height="451"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pcell" rowHeight="100" id="0UG-Hp-tmD" customClass="productCell" customModule="bakeapp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pcell" rowHeight="100" id="0UG-Hp-tmD" customClass="tableViewCellBooked" customModule="bakeapp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="361" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0UG-Hp-tmD" id="twh-9Q-1bB" customClass="productCell" customModule="bakeapp" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0UG-Hp-tmD" id="twh-9Q-1bB" customClass="tableViewCellBooked" customModule="bakeapp" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="361" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -365,15 +358,22 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
-                                            <outlet property="date" destination="YKb-Ee-Ys6" id="zF0-vW-vlA"/>
-                                            <outlet property="level" destination="mwP-up-uYe" id="ohv-X9-64H"/>
-                                            <outlet property="productName" destination="1EZ-Ga-nY3" id="rj1-bi-6m7"/>
-                                            <outlet property="productimg" destination="aEU-ev-m7u" id="iQ9-aB-kdV"/>
-                                            <outlet property="time" destination="z0i-KY-65F" id="S9S-U0-OKa"/>
+                                            <outlet property="date" destination="YKb-Ee-Ys6" id="2Xv-Mq-m6U"/>
+                                            <outlet property="level" destination="mwP-up-uYe" id="CA8-e6-Amz"/>
+                                            <outlet property="productName" destination="1EZ-Ga-nY3" id="j6o-Tp-chq"/>
+                                            <outlet property="productimg" destination="aEU-ev-m7u" id="p80-Fc-Rlw"/>
+                                            <outlet property="time" destination="z0i-KY-65F" id="ciX-u8-AIs"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Booked courses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbB-bv-Q5l">
+                                <rect key="frame" x="26" y="261" width="170" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Wlh-bg-ooz"/>
                         <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
@@ -384,11 +384,12 @@
                         <outlet property="UItableViewbooked" destination="LWa-HZ-Hpw" id="tOl-x2-GCg"/>
                         <outlet property="ViewUserName" destination="q3e-9i-9Mu" id="Zb8-by-Pqd"/>
                         <outlet property="editText" destination="EuC-mn-xgb" id="z8w-9l-bZv"/>
+                        <segue destination="Vb5-ly-kTq" kind="showDetail" id="XS9-S7-Ccs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Ow-JW-lKd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2513.740458015267" y="1279.5774647887324"/>
+            <point key="canvasLocation" x="2514" y="1254"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="82w-i8-iBP">
@@ -555,7 +556,7 @@
                                 </prototypes>
                             </tableView>
                             <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="pl2-VY-NMg">
-                                <rect key="frame" x="4" y="100" width="379" height="44"/>
+                                <rect key="frame" x="4" y="100" width="376" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -590,7 +591,7 @@
             <objects>
                 <viewController id="z7i-Nc-Z1M" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Jx-9P-DrH" customClass="pop">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image 6" translatesAutoresizingMaskIntoConstraints="NO" id="acP-5a-buv">
@@ -819,7 +820,7 @@
             <objects>
                 <viewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" keyboardType="off" id="LbM-ME-o4j" customClass="ViewController" customModule="bakeapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Ic-Dx-yht" customClass="UIAlertView">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Hza-tN-0BO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -828,7 +829,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mTf-7C-zLC" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="318" y="2001"/>
+            <point key="canvasLocation" x="317" y="2001"/>
         </scene>
         <!--Popup View-->
         <scene sceneID="bwc-Y8-F8w">
@@ -907,8 +908,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="tyh-fl-Wfy"/>
-        <segue reference="zz6-Wk-PCZ"/>
+        <segue reference="VKK-qp-VG5"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Image" width="58" height="48"/>
@@ -922,7 +922,7 @@
         <image name="eye" catalog="system" width="128" height="79"/>
         <image name="hourglass" catalog="system" width="103" height="128"/>
         <image name="location" catalog="system" width="128" height="121"/>
-        <image name="person.circle" catalog="system" width="128" height="123"/>
+        <image name="personicone" width="29" height="29"/>
         <image name="xmark.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

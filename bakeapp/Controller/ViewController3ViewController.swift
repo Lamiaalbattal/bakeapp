@@ -7,7 +7,11 @@
 
 import UIKit
 
-class ViewController3ViewController: UIViewController {
+class ViewController3ViewController: UIViewController, UITableViewDelegate , UITableViewDataSource {
+    
+   
+    
+   
 
     @IBOutlet weak var ViewUserName: UIView!
     
@@ -20,7 +24,7 @@ class ViewController3ViewController: UIViewController {
     @IBOutlet weak var UItableViewbooked: UITableView!
     var products : [Product] = [Product]()
     
-    
+    let celld = "pcell"
     
     
     
@@ -32,8 +36,8 @@ class ViewController3ViewController: UIViewController {
         ViewUserName.layer.shadowOpacity = 0.1
         ViewUserName.layer.shadowOffset = .zero
 //        ViewUserName.layer.shadowRadius = 5
-//        tableViewBooked.delegate = self
-//        tableViewBooked.dataSource = self
+        UItableViewbooked.delegate = self
+        UItableViewbooked.dataSource = self
         Nameuser.isEnabled = false
         Nameuser.text = "Ali"
         editText.setTitle("Edit", for: .normal)
@@ -57,9 +61,45 @@ class ViewController3ViewController: UIViewController {
         
     }
     override func viewWillAppear(_ animated: Bool) {
-//        tableViewBooked.reloadData()
+        createProductArray()
         UItableViewbooked.reloadData()
         
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
+        
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return  products.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UItableViewbooked.dequeueReusableCell(withIdentifier: "pcell", for: indexPath) as! tableViewCellBooked
+        
+        let currentLastItem = products[indexPath.row]
 
+
+                cell.productName?.text = currentLastItem.productName
+
+                cell.productimg?.image = UIImage(named: currentLastItem.productImage)
+
+                cell.level?.text = currentLastItem.levels
+        cell.time?.text = currentLastItem.times
+        cell.date?.text = currentLastItem.dates
+        
+
+        return cell
+    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: "showDetails", sender: nil)
+//    }
+    func createProductArray() {
+        products.append(Product(productName: "babka dough", productImage: "babka", levels: "beginner" , times: "1h" , dates: "10 feb - 2:00"))
+        
+        products.append(Product(productName: "cinamon", productImage: "cinamon", levels: "intermidiate" , times: "1h" , dates: "13 feb - 4:00"))
+        products.append(Product(productName: "japannes bread", productImage: "jb", levels: "itermidate" , times: "2h" , dates: "3 feb - 4:00"))
+        products.append(Product(productName: "bnanna bread", productImage: "bb", levels: "Advanced" , times: "4h" , dates: "4 feb - 4:00"))
+        
+        
+    }
 }
