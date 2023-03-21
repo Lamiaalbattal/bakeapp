@@ -13,7 +13,9 @@ class ViewController: UIViewController  {
     @IBOutlet weak var upcomingView: UIView!
     
     @IBOutlet weak var tableViewProduct: UITableView!
-    var products : [Product] = [Product]()
+    var CoursesArray = [Course]()
+    
+//    = [Product]()
 
 
     
@@ -27,6 +29,7 @@ class ViewController: UIViewController  {
         upcomingView.layer.shadowOffset = .zero
         upcomingView.layer.shadowRadius = 5
         tableViewProduct.layer.cornerRadius = 5
+        getData()
 
     }
     
@@ -34,17 +37,68 @@ class ViewController: UIViewController  {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        createProductArray()
-        
+//        createProductArray()
+        getData()
         tableViewProduct.reloadData()
         
     }
+    func getData(){
+        if let url = URL(string: "https://a6bf438f-cd56-4ed1-9647-690231339c09.mock.pstmn.io/course"){
+        //    if let url = URL(string: "https://a6bf438f-cd56-4ed1-9647-690231339c09.mock.pstmn.io/course/\(id)"){
+
+            URLSession.shared.dataTask(with: url) { data , response , error in
+               
+                if let data = data {
+                    do {
+                        let res = try JSONDecoder().decode([Course].self, from :
+                                                            data)
+                        self.CoursesArray = res
+
+                        DispatchQueue.main.async {
+                            self.tableViewProduct.reloadData()
+                        }
+                
+                        print("res\(res)")
+                    }catch let error {
+                        print("error\(error)")
+                    }
+                }
+            }.resume()
+        }
+     
+    }
     
+//    func fetchData(){
+//    let url = URL(string:
+//    "https://8c98cfcd-61eb-46d6-8400-ff2f57215cf8.mock.pstmn.io")
+//    let dataTask = URLSession.shared.dataTask(with: url!, completionHandler: {
+//    (data, response, error) in
+//        guard let data = data, error == nil else
+//        {
+//            print ("Error Occured While Accessing Data with URL")
+//            return
+//        }
+//        var newsFullList:CoursesData?
+//        do{
+//            newsFulllist = try JSONDecoder ().decode (CoursesData.self, from: data)
+//        }
+//        catch
+//        {
+//            print ("Error Occured while Decoding JSON into Swift Structure\(error)")
+//        }
+//        self.Product = newsFulllist!.articles
+//        DispatchQueue.main.async {
+//            self.myTableView.reloadData() }
+//    })
+//   
+// 
+//    dataTask.resume()
+//                  }
 }
 
 extension ViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        return CoursesArray.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -54,17 +108,24 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewProduct.dequeueReusableCell(withIdentifier: "pcell", for: indexPath) as! productCell
         
-        let currentLastItem = products[indexPath.row]
+        let currentLastItem = CoursesArray[indexPath.row]
 
 
-                cell.productName?.text = currentLastItem.productName
+        cell.productName?.text = currentLastItem.title
+            
+            if let url = URL(string: currentLastItem.image){
+                if let data = try? Data(contentsOf: url){
+                    DispatchQueue.main.async {
+                    cell.productimg?.image = UIImage(data: data)
+                }
+                
+            }
+        }
+      
+        cell.level?.text = "\(currentLastItem.level)"
+        cell.time?.text = "\(currentLastItem.startDate)"
+        cell.date?.text = "\(currentLastItem.endDate)"
 
-                cell.productimg?.image = UIImage(named: currentLastItem.productImage)
-
-                cell.level?.text = currentLastItem.levels
-        cell.time?.text = currentLastItem.times
-        cell.date?.text = currentLastItem.dates
-        
 
         return cell
     }
@@ -72,15 +133,15 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showDetails", sender: nil)
     }
-    func createProductArray() {
-        products.append(Product(productName: "babka dough", productImage: "babka", levels: "beginner" , times: "1h" , dates: "10 feb - 2:00"))
-        
-        products.append(Product(productName: "cinamon", productImage: "cinamon", levels: "intermidiate" , times: "1h" , dates: "13 feb - 4:00"))
-        products.append(Product(productName: "japannes bread", productImage: "jb", levels: "itermidate" , times: "2h" , dates: "3 feb - 4:00"))
-        products.append(Product(productName: "bnanna bread", productImage: "bb", levels: "Advanced" , times: "4h" , dates: "4 feb - 4:00"))
-        
-        
-    }
+//    func createProductArray() {
+//        products.append(Product(productName: "babka dough", productImage: "babka", levels: "beginner" , times: "1h" , dates: "10 feb - 2:00"))
+//
+//        products.append(Product(productName: "cinamon", productImage: "cinamon", levels: "intermidiate" , times: "1h" , dates: "13 feb - 4:00"))
+//        products.append(Product(productName: "japannes bread", productImage: "jb", levels: "itermidate" , times: "2h" , dates: "3 feb - 4:00"))
+//        products.append(Product(productName: "bnanna bread", productImage: "bb", levels: "Advanced" , times: "4h" , dates: "4 feb - 4:00"))
+//
+//
+//    }
 }
 
 

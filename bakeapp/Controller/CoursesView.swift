@@ -11,7 +11,7 @@ class CoursesView: UIViewController {
 
     
     @IBOutlet weak var tableViewProduct: UITableView!
-    var products : [Product] = [Product]()
+    var products : [Course] = [Course]()
     
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class CoursesView: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        createProductArray()
+//        createProductArray()
         
         tableViewProduct.reloadData()
         
@@ -50,14 +50,14 @@ extension CoursesView : UITableViewDelegate , UITableViewDataSource {
         
         let currentLastItem = products[indexPath.row]
 
-
-                cell.productName?.text = currentLastItem.productName
-
-                cell.productimg?.image = UIImage(named: currentLastItem.productImage)
-
-                cell.level?.text = currentLastItem.levels
-        cell.time?.text = currentLastItem.times
-        cell.date?.text = currentLastItem.dates
+//
+//                cell.productName?.text = currentLastItem.productName
+//
+//                cell.productimg?.image = UIImage(named: currentLastItem.productImage)
+//
+//                cell.level?.text = currentLastItem.levels
+//        cell.time?.text = currentLastItem.times
+//        cell.date?.text = currentLastItem.dates
         
 
         return cell
@@ -66,16 +66,16 @@ extension CoursesView : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showDetails", sender: nil)
     }
-    func createProductArray() {
-        products.append(Product(productName: "babka dough", productImage: "babka", levels: "beginner" , times: "1h" , dates: "10 feb - 2:00"))
-        
-        products.append(Product(productName: "cinamon", productImage: "cinamon", levels: "intermidiate" , times: "1h" , dates: "13 feb - 4:00"))
-        products.append(Product(productName: "japannes bread", productImage: "jb", levels: "itermidate" , times: "2h" , dates: "3 feb - 4:00"))
-        products.append(Product(productName: "bnanna bread", productImage: "bb", levels: "Advanced" , times: "4h" , dates: "4 feb - 4:00"))
-        
-        
-        // Do any additional setup after loading the view.
-    }
+//    func createProductArray() {
+//        products.append(Product(productName: "babka dough", productImage: "babka", levels: "beginner" , times: "1h" , dates: "10 feb - 2:00"))
+//
+//        products.append(Product(productName: "cinamon", productImage: "cinamon", levels: "intermidiate" , times: "1h" , dates: "13 feb - 4:00"))
+//        products.append(Product(productName: "japannes bread", productImage: "jb", levels: "itermidate" , times: "2h" , dates: "3 feb - 4:00"))
+//        products.append(Product(productName: "bnanna bread", productImage: "bb", levels: "Advanced" , times: "4h" , dates: "4 feb - 4:00"))
+//
+//
+//        // Do any additional setup after loading the view.
+//    }
     
 
     /*
