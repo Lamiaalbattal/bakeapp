@@ -9,10 +9,22 @@ import UIKit
 
 class viewController2: UIViewController , UITextFieldDelegate {
     
+//    @IBOutlet weak var LBTitle: UILabel!
+//
+//    @IBOutlet weak var LBEmaail: UILabel!
+//
+//    @IBOutlet weak var TextEmail: UITextField!
+//
+//    @IBOutlet weak var LBPassword: UILabel!
+//
+//
+//    @IBOutlet weak var TextPassword: UITextField!
+    
     @IBOutlet weak var LBTitle: UILabel!
     
     @IBOutlet weak var LBEmaail: UILabel!
-
+    
+    
     @IBOutlet weak var TextEmail: UITextField!
     
     @IBOutlet weak var LBPassword: UILabel!

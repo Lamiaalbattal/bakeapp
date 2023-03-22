@@ -11,8 +11,8 @@ class CoursesView: UIViewController {
 
     
     @IBOutlet weak var tableViewProduct: UITableView!
-    var products : [Course] = [Course]()
-    
+//    var products : [Course] = [Course]()
+    var CoursesArray = [Course]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,24 +21,48 @@ class CoursesView: UIViewController {
         tableViewProduct.dataSource = self
        
         tableViewProduct.layer.cornerRadius = 5
-
+        getData()
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        getData()
 //        createProductArray()
         
         tableViewProduct.reloadData()
         
     }
-    
+    func getData(){
+        if let url = URL(string: "https://8c960126-c0db-4f6b-9ff2-29b17b41b75a.mock.pstmn.io/course"){
+        //    if let url = URL(string: "https://a6bf438f-cd56-4ed1-9647-690231339c09.mock.pstmn.io/course/\(id)"){
+
+            URLSession.shared.dataTask(with: url) { data , response , error in
+               
+                if let data = data {
+                    do {
+                        let res = try JSONDecoder().decode([Course].self, from :
+                                                            data)
+                        self.CoursesArray = res
+
+                        DispatchQueue.main.async {
+                            self.tableViewProduct.reloadData()
+                        }
+                
+                        print("res\(res)")
+                    }catch let error {
+                        print("error\(error)")
+                    }
+                }
+            }.resume()
+        }
+     
+    }
 }
 
 extension CoursesView : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        return CoursesArray.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -47,8 +71,24 @@ extension CoursesView : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewProduct.dequeueReusableCell(withIdentifier: "pcell", for: indexPath) as! productCell
-        
-        let currentLastItem = products[indexPath.row]
+        let currentLastItem = CoursesArray[indexPath.row]
+        cell.productName?.text = currentLastItem.title
+            
+            if let url = URL(string: currentLastItem.image){
+                if let data = try? Data(contentsOf: url){
+                    DispatchQueue.main.async {
+                    cell.productimg?.image = UIImage(data: data)
+                }
+                
+            }
+        }
+      
+        cell.level?.text = "\(currentLastItem.level)"
+        cell.time?.text = "\(currentLastItem.startDate)"
+        cell.date?.text = "\(currentLastItem.endDate)"
+
+
+//        let currentLastItem = CoursesArray[indexPath.row]
 
 //
 //                cell.productName?.text = currentLastItem.productName

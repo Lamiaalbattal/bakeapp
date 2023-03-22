@@ -39,7 +39,7 @@ class ViewController: UIViewController  {
         
     }
     func getData(){
-        if let url = URL(string: "https://a6bf438f-cd56-4ed1-9647-690231339c09.mock.pstmn.io/course"){
+        if let url = URL(string: "https://8c960126-c0db-4f6b-9ff2-29b17b41b75a.mock.pstmn.io/course"){
         //    if let url = URL(string: "https://a6bf438f-cd56-4ed1-9647-690231339c09.mock.pstmn.io/course/\(id)"){
 
             URLSession.shared.dataTask(with: url) { data , response , error in
