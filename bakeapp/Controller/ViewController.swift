@@ -15,11 +15,7 @@ class ViewController: UIViewController  {
     @IBOutlet weak var tableViewProduct: UITableView!
     var CoursesArray = [Course]()
     
-//    = [Product]()
-
-
-    
-    override func viewDidLoad() {
+  override func viewDidLoad() {
         super.viewDidLoad()
         tableViewProduct.delegate = self
         tableViewProduct.dataSource = self
@@ -67,34 +63,8 @@ class ViewController: UIViewController  {
         }
      
     }
-    
-//    func fetchData(){
-//    let url = URL(string:
-//    "https://8c98cfcd-61eb-46d6-8400-ff2f57215cf8.mock.pstmn.io")
-//    let dataTask = URLSession.shared.dataTask(with: url!, completionHandler: {
-//    (data, response, error) in
-//        guard let data = data, error == nil else
-//        {
-//            print ("Error Occured While Accessing Data with URL")
-//            return
-//        }
-//        var newsFullList:CoursesData?
-//        do{
-//            newsFulllist = try JSONDecoder ().decode (CoursesData.self, from: data)
-//        }
-//        catch
-//        {
-//            print ("Error Occured while Decoding JSON into Swift Structure\(error)")
-//        }
-//        self.Product = newsFulllist!.articles
-//        DispatchQueue.main.async {
-//            self.myTableView.reloadData() }
-//    })
-//   
-// 
-//    dataTask.resume()
-//                  }
-}
+              }
+//}
 
 extension ViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
