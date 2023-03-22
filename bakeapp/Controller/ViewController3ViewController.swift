@@ -26,11 +26,19 @@ class ViewController3ViewController: UIViewController, UITableViewDelegate , UIT
     
     let celld = "pcell"
     
-    
+    var mybookingIds : [Booked] = [Booked]()
+
+        
+    var AllCoursesInfo : [CoursesModel] = [CoursesModel]()
+        
+        
+    var mybookingAllInfo : [CoursesModel] = [CoursesModel]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getData()
+        
         ViewUserName.layer.cornerRadius = 5
         ViewUserName.layer.shadowColor = UIColor.black.cgColor
         ViewUserName.layer.shadowOpacity = 0.1
@@ -61,6 +69,7 @@ class ViewController3ViewController: UIViewController, UITableViewDelegate , UIT
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        
         createProductArray()
         UItableViewbooked.reloadData()
         
@@ -90,6 +99,72 @@ class ViewController3ViewController: UIViewController, UITableViewDelegate , UIT
 
         return cell
     }
+    func getData() {
+            var urlComponents = URLComponents(string: "https://a6bf438f-cd56-4ed1-9647-690231339c09.mock.pstmn.io/course/780BAC2D-D839-444D-B2BA-4B6F8E736E9D/booking")
+
+                  
+              
+              if let url = urlComponents?.url{
+                  
+                  URLSession.shared.dataTask(with: url) { [self] data, response, error in
+                      if let data = data {
+                          do {
+                               let res = try JSONDecoder().decode([Booked].self, from: data)
+                              
+                              self.mybookingIds = res
+                              getCourseInfo()
+
+                              print(res)
+                          } catch let error {
+                              print(error)
+                          }
+                      }
+                  }.resume()
+              }
+          }
+        
+        
+        func getCourseInfo() {
+            var urlComponents = URLComponents(string: "https://a6bf438f-cd56-4ed1-9647-690231339c09.mock.pstmn.io}/course")
+            
+            
+            
+            if let url = urlComponents?.url{
+                
+                URLSession.shared.dataTask(with: url) { [self] data, response, error in
+                    if let data = data {
+                        do {
+                            let res = try JSONDecoder().decode([CoursesModel].self, from: data)
+                            
+                            
+                            
+                            self.AllCoursesInfo = res
+                            
+                            for item in AllCoursesInfo {
+                                for booking in mybookingIds {
+                                    
+                                    if item.id == booking.courseID
+                                    {
+                                        mybookingAllInfo.append(item)
+                                       
+                                    }
+                                }
+                            }
+                            // viewn mr
+                            DispatchQueue.main.async {
+                            self.UItableViewbooked.reloadData()
+                            }
+                           
+
+                                print(res)
+                            } catch let error {
+                                print(error)
+                            }
+                        }
+                    }.resume()
+                }
+            }
+
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        performSegue(withIdentifier: "showDetails", sender: nil)
 //    }

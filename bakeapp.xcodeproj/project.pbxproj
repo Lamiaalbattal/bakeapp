@@ -12,6 +12,8 @@
 		5CDA575329C8436C00F7A22A /* ViewController3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA575229C8436C00F7A22A /* ViewController3ViewController.swift */; };
 		5CDA575529C84B8000F7A22A /* tableViewCellBooked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA575429C84B8000F7A22A /* tableViewCellBooked.swift */; };
 		5CDA575729C859A200F7A22A /* viewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA575629C859A200F7A22A /* viewController2.swift */; };
+		5CDA57E729CA358000F7A22A /* Booked.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA57E629CA358000F7A22A /* Booked.swift */; };
+		5CDA57E929CA35A700F7A22A /* CoursesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CDA57E829CA35A700F7A22A /* CoursesModel.swift */; };
 		E032BB9429BEFB740080910B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E032BB9329BEFB740080910B /* AppDelegate.swift */; };
 		E032BB9629BEFB740080910B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E032BB9529BEFB740080910B /* SceneDelegate.swift */; };
 		E032BB9B29BEFB740080910B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E032BB9929BEFB740080910B /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 		5CDA575229C8436C00F7A22A /* ViewController3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController3ViewController.swift; sourceTree = "<group>"; };
 		5CDA575429C84B8000F7A22A /* tableViewCellBooked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewCellBooked.swift; sourceTree = "<group>"; };
 		5CDA575629C859A200F7A22A /* viewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewController2.swift; sourceTree = "<group>"; };
+		5CDA57E629CA358000F7A22A /* Booked.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Booked.swift; sourceTree = "<group>"; };
+		5CDA57E829CA35A700F7A22A /* CoursesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesModel.swift; sourceTree = "<group>"; };
 		E032BB9029BEFB740080910B /* bakeapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bakeapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E032BB9329BEFB740080910B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E032BB9529BEFB740080910B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				E0BBC30D29C0563400BB8ABB /* Product.swift */,
+				5CDA57E629CA358000F7A22A /* Booked.swift */,
+				5CDA57E829CA35A700F7A22A /* CoursesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -197,6 +203,7 @@
 				56C97CD329C7037A009C8228 /* Viewcontroller1.swift in Sources */,
 				E0BBC30E29C0563400BB8ABB /* Product.swift in Sources */,
 				5CDA575529C84B8000F7A22A /* tableViewCellBooked.swift in Sources */,
+				5CDA57E729CA358000F7A22A /* Booked.swift in Sources */,
 				E032BB9429BEFB740080910B /* AppDelegate.swift in Sources */,
 				5CDA575729C859A200F7A22A /* viewController2.swift in Sources */,
 				E0BBC31C29C2F9E800BB8ABB /* DesignView.swift in Sources */,
@@ -204,6 +211,7 @@
 				56874AE129C6FCBA006EABA3 /* PopUpView.swift in Sources */,
 				E0BBC31429C05A2200BB8ABB /* ViewController.swift in Sources */,
 				E032BB9629BEFB740080910B /* SceneDelegate.swift in Sources */,
+				5CDA57E929CA35A700F7A22A /* CoursesModel.swift in Sources */,
 				5CDA575329C8436C00F7A22A /* ViewController3ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
